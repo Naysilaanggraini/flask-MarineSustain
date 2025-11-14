@@ -1,0 +1,272 @@
+/* === GLOBAL STYLE === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #1e293b;
+  padding-top: 98px;
+}
+
+/* === NAVBAR === */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 64px;
+  background-color: white;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #0d3b66;
+}
+
+.navbar-logo img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.navbar nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.navbar a {
+  color: #334155;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #059669;
+}
+
+.navbar a.active {
+  border-bottom: 2px solid #059669;
+  color: #059669;
+}
+
+/* === MAIN CONTENT === */
+.content {
+  padding: 40px 80px;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 1.8rem;
+  color: #0d3b66;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.content p {
+  color: #64748b;
+  margin-bottom: 24px;
+}
+
+/* === FILTER SECTION === */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.filters select,
+.filters button {
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 0.95rem;
+}
+
+.filters button {
+  background-color: #22c55e;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.filters button:hover {
+  background-color: #16a34a;
+}
+
+/* === DASHBOARD CARDS === */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  min-height: 260px;
+  text-align: left;
+}
+
+.card h3 {
+  color: #0d3b66;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.card.wide {
+  grid-column: span 2;
+  min-height: 300px;
+}
+
+.card-chart {
+  border-radius: 12px;
+  height: 420px; /* ✅ naikkan tinggi box */
+  margin: 0 auto 40px;
+  width: 100%; /* lebar penuh */
+  display: flex;
+  flex-direction: column; /* biar judul dan chart tersusun vertikal */
+  align-items: center;
+  justify-content: center;
+  color: #0369a1;
+  font-weight: 500;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card-chart canvas {
+  width: 100% !important;
+  
+}
+
+
+/* === STATUS CARDS VERTICAL === */
+.status-cards-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.status-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  border: 1.5px solid transparent; /* awalnya tanpa warna */
+  transition: all 0.3s ease; /* transisi halus untuk hover */
+  cursor: pointer;
+}
+
+/* Efek hover: border lembut dan shadow naik */
+.status-card:hover {
+  border-color: #bae6fd; /* biru muda lembut */
+  box-shadow: 0 4px 12px rgba(3, 105, 161, 0.15);
+  transform: translateY(-3px); /* efek sedikit terangkat */
+}
+
+.status-card h5 {
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: #003366;
+  font-weight: 700;
+}
+
+.status-card p {
+  margin: 3px 0;
+  font-size: 14px;
+  color: #1e293b;
+}
+
+.trend.red {
+  color: #d9534f;
+}
+
+.trend.green {
+  color: #28a745;
+}
+
+.tag {
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.tag.green {
+  background-color: #28a745;
+}
+
+.tag.gray {
+  background-color: #6c757d;
+}
+
+/* === MAP CONTAINER === */
+#mapContainer {
+  height: 600px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content {
+    padding: 20px 24px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 24px;
+  }
+
+  .navbar nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .status-cards-vertical {
+    width: 100%;
+  }
+
+  .card.wide {
+    min-height: 250px;
+  }
+}

@@ -1,0 +1,6 @@
+Flask==3.0.3
+gunicorn==21.2.0
+pandas
+numpy
+joblib
+folium

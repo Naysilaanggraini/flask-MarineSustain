@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Analisis Laut Indonesia</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <h1 class="navbar-logo">
+      <img src="/static/Images/logo2.jpg" alt="Logo" />
+      MarineSustain
+    </h1>
+    <nav>
+      <a href="/">Beranda</a>
+      <a href="/about">Tentang Kami</a>
+      <a href="/dashboard" class="active">Dashboard</a>
+      <a href="/marine-law">Hukum Laut</a>
+      <a href="/ecology-population">Ekologi & Populasi</a>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="content">
+    <h2>Dashboard Analisis Laut Indonesia</h2>
+    <p>Pantau populasi ikan, risiko penangkapan, dan kepatuhan hukum laut</p>
+
+    <!-- ===== FILTER SECTION ===== -->
+    <div class="filters">
+      <form id="filterForm">
+        <select id="tahun">
+          <option value="">Pilih Tahun</option>
+          {% for t in tahun_list %}
+          <option value="{{ t }}">{{ t }}</option>
+          {% endfor %}
+        </select>
+
+        <select id="provinsi">
+          <option value="">Semua Provinsi</option>
+          {% for p in provinsi_list %}
+          <option value="{{ p }}">{{ p }}</option>
+          {% endfor %}
+        </select>
+
+        <select id="ikan">
+          <option value="">Jenis Ikan</option>
+          {% for k in ikan_list %}
+          <option value="{{ k }}">{{ k }}</option>
+          {% endfor %}
+        </select>
+
+        <button type="submit" class="btn btn-success">Filter</button>
+      </form>
+    </div>
+
+    <!-- ===== DASHBOARD SECTION ===== -->
+    <section class="cards">
+
+      <!-- (1) Tren Populasi -->
+      <div class="card">
+        <h3>Tren Populasi Ikan</h3>
+        <canvas id="chartPopulasi" width="600" height="300"></canvas>
+      </div>
+
+      <!-- (2) Distribusi Status Stok -->
+      <div class="card-chart">
+        <canvas id="ikanChart" ></canvas>
+      </div>
+      
+      <!-- (3) Komposisi Status Stok -->
+      <div class="card-chart" style="margin-top: 40px;">
+        <canvas id="pieChart" ></canvas>
+      </div>
+
+      <!-- (4) Ringkasan Status Populasi (Cards Vertikal) -->
+      <div class="status-cards-vertical">
+        <div class="status-card">
+          <h5>CAKALANG</h5>
+          <p>Populasi Saat Ini: <span class="value">11.27</span></p>
+          <p>Tren Tahunan: <span class="trend red">-13.98%</span></p>
+          <p>Status: <span class="tag green">Underfishing</span></p>
+        </div>
+
+        <div class="status-card">
+          <h5>MARLIN</h5>
+          <p>Populasi Saat Ini: <span class="value">11.27</span></p>
+          <p>Tren Tahunan: <span class="trend red">-13.98%</span></p>
+          <p>Status: <span class="tag green">Underfishing</span></p>
+        </div>
+
+        <div class="status-card">
+          <h5>TENGGIRI</h5>
+          <p>Populasi Saat Ini: <span class="value">11.72</span></p>
+          <p>Tren Tahunan: <span class="trend red">-5.9%</span></p>
+          <p>Status: <span class="tag green">Underfishing</span></p>
+        </div>
+
+        <div class="status-card">
+          <h5>TONGKOL</h5>
+          <p>Populasi Saat Ini: <span class="value">11.06</span></p>
+          <p>Tren Tahunan: <span class="trend red">-12.26%</span></p>
+          <p>Status: <span class="tag gray">Uncertain</span></p>
+        </div>
+
+        <div class="status-card">
+          <h5>TUNA</h5>
+          <p>Populasi Saat Ini: <span class="value">10.82</span></p>
+          <p>Tren Tahunan: <span class="trend red">-11.64%</span></p>
+          <p>Status: <span class="tag green">Underfishing</span></p>
+        </div>
+      </div>
+
+      <!-- (5) Peta Kepatuhan -->
+      <div class="card wide">
+        <h3>Peta Kepatuhan Hukum Laut</h3>
+        <div id="mapContainer" style="height:600px; border-radius:12px; overflow:hidden;"></div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ===== JS SECTION ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/static/JS/dashboard.js"></script>
+  <script src="/static/JS/ecology_population.js"></script>
+</body>
+</html>

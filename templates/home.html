@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MarineSustain | Ocean Intelligence Platform</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+
+  <!-- === NAVBAR === -->
+ <header class="navbar">
+    <h1 class="navbar-logo">
+    <img src="/static/Images/logo2.jpg" alt="Logo" />
+    MarineSustain
+    </h1>
+    <nav>
+      <a href="/" class="active">Beranda</a>
+      <a href="/about">Tentang Kami</a>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/marine-law">Hukum Laut</a>
+      <a href="/ecology-population">Ekologi & Populasi</a>
+    </nav>
+  </header>
+
+  <!-- === HERO SECTION === -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Mengenal Dinamika Laut & <span class="highlight">Keberlanjutan Perikanan Indonesia</span></h1>
+        <p>Integrasi AI, BI, dan Kajian Hukum Laut untuk menjaga keseimbangan ekosistem maritim dan mendukung perikanan berkelanjutan.</p>
+        <div class="hero-buttons">
+          <a href="/dashboard" class="btn-primary">Lihat Dashboard</a>
+          <a href="/about" class="btn-secondary">Pelajari Lebih Lanjut</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="/static/Images/imagehome.jpg" alt="Laut Indonesia" width="600">
+      </div>
+    </div>
+  </section>
+
+  <!-- === STATISTICS CARDS === -->
+  <section class="stats">
+    <div class="container stats-cards">
+      <div class="card stat">
+        <h3>Tren Populasi Ikan</h3>
+        <p>Monitoring populasi ikan jenis kelompok pelagis besar di setiap provinsi</p>
+      </div>
+      <div class="card stat">
+        <h3>Zona Berisiko Overfishing</h3>
+        <p>Area dengan tingkat penangkapan ikan berlebihan</p>
+      </div>
+      <div class="card stat">
+        <h3>Kepatuhan Hukum Laut</h3>
+        <p>Analisis kepatuhan regulasi perikanan nasional</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- === INTEGRATION SECTION === -->
+  <section class="integration">
+    <div class="container integration-content">
+      <div class="text">
+        <span class="tag">Inovasi Teknologi Maritim</span>
+        <h2>Integrasi Multidisiplin untuk Keberlanjutan Laut</h2>
+        <p>Platform ini menggabungkan bidang Artificial Intelligence, Business Intelligence, dan kajian Hukum Laut untuk menganalisis kondisi populasi dan tren penangkapan ikan pelagis besar di Indonesia dalam beberapa tahun terakhir.</p>
+        <ul>
+          <li>Prediksi AI dengan model machine learning untuk memantau tren penangkapan ikan pelagis besar di Indonesia</li>
+          <li>Dashboard BI untuk visualisasi data</li>
+          <li>Analisis Regulasi Hukum Perairan di Indonesia</li>
+        </ul>
+      </div>
+      <div class="image">
+        <img src="/static/Images/ai-robot.png" alt="AI Lab" width="200">
+      </div>
+    </div>
+  </section>
+
+<!-- === SPECIES SLIDER SECTION === -->
+<section class="species-section">
+  <div class="container">
+    <h2>Jenis Ikan Pelagis Besar yang Diamati</h2>
+    <p>Kelima spesies utama ini digunakan dalam analisis populasi, tren penangkapan, dan prediksi model AI kami.</p>
+
+    <div class="species-slider">
+      
+      <!-- 1 -->
+      <div class="species-card">
+        <img src="/static/Images/ikan tuna.jpeg.jpg" alt="Tuna">
+        <h4>Tuna</h4>
+        <p><strong>Nama Ilmiah:</strong> Thunnini</p>
+        <p><strong>Habitat:</strong> Perairan tropis beriklim sedang. Hidup di kedalaman 0 - 500 meter.</p>
+      </div>
+
+      <!-- 2 -->
+      <div class="species-card">
+        <img src="/static/Images/ikan cakalang.jpg" alt="Cakalang">
+        <h4>Cakalang</h4>
+        <p><strong>Nama Ilmiah:</strong> Katsuwonus pelamis</p>
+        <p><strong>Habitat:</strong> Perairan tropis sampai subtropis. Hidup di kedalaman 0 - 260 meter.</p>
+      </div>
+
+      <!-- 3 -->
+      <div class="species-card">
+        <img src="/static/Images/ikan tongkol.jpg" alt="Tongkol">
+        <h4>Tongkol</h4>
+        <p><strong>Nama Ilmiah:</strong> Euthynnus affinis</p>
+        <p><strong>Habitat:</strong> Perairan pesisir tropis hingga subtropis indo-pasifik. Hidup di kedalaman 0 - 200 meter.</p>
+      </div>
+
+      <!-- 4 -->
+      <div class="species-card">
+        <img src="/static/Images/ikan marlin.jpg" alt="Marlin">
+        <h4>Marlin</h4>
+        <p><strong>Nama Ilmiah:</strong> Makaira nigricans</p>
+        <p><strong>Habitat:</strong> Perairan Samudera Tropis hingga Subtropis. Hidup di kedalaman 0 - 200 meter.</p>
+      </div>
+
+      <!-- 5 -->
+      <div class="species-card">
+        <img src="/static/Images/ikan tenggiri.jpeg.jpg" alt="Tenggiri">
+        <h4>Tenggiri</h4>
+        <p><strong>Nama Ilmiah:</strong> Scomberomorus commerson</p>
+        <p><strong>Habitat:</strong> Perairan Pesisir dan Neritik. Hidup di kedalaman 0 - 200 meter.</p>
+      </div>
+
+    </div>
+
+    <div class="species-button">
+      <a href="/ecology-population" class="btn-primary species-btn">Mulai Prediksi</a>
+    </div>
+  </div>
+</section>
+
+  <!-- === NEWS SECTION === -->
+<section class="news-section">
+  <div class="container">
+    <h2>Berita Kelautan & Perikanan Terkini</h2>
+    <p>Rangkuman berita dan kebijakan terbaru seputar ekosistem laut, perikanan, dan kedaulatan maritim Indonesia.</p>
+
+    <div class="news-grid">
+      <!-- 1 -->
+      <div class="news-card">
+        <h4>Kementerian Kelautan dan Perikanan (KKP)</h4>
+        <p>Kementerian Kelautan dan Perikanan (KKP) mendorong penguatan perlindungan ekosistem laut dan pesisir di luar kawasan konservasi melalui kerangka kerja “OECM” sebagai langkah menuju ekonomi biru berkelanjutan.</p>
+        <a href="https://kkp.go.id/news/news-detail/kkp-dorong-perlindungan-ekosistem-laut-pesisir-di-luar-kawasan-koservasi-qQ6R.html" target="_blank">Baca Selengkapnya →</a>
+      </div>
+
+      <!-- 2 -->
+      <div class="news-card">
+        <h4>Tempo</h4>
+        <p>Prabowo Subianto akan menandatangani hasil ratifikasi persetujuan batas ZEE Indonesia–Vietnam di Hanoi, menandai capaian diplomasi maritim penting setelah proses panjang.</p>
+        <a href="https://www.tempo.co/politik/prabowo-akan-teken-hasil-ratifikasi-zee-indonesia-vietnam-di-hanoi-1217748" target="_blank">Baca Selengkapnya →</a>
+      </div>
+
+      <!-- 3 -->
+      <div class="news-card">
+        <h4>eco.espos.id</h4>
+        <p>Penangkapan ikan berlebihan (over-fishing) di Indonesia kini mengancam keseimbangan ekosistem laut serta berpotensi merusak rantai makanan dan habitat biota laut.</p>
+        <a href="https://eco.espos.id/penangkapan-ikan-berlebihan-ancam-keseimbangan-ekosistem-2160959" target="_blank">Baca Selengkapnya →</a>
+      </div>
+
+      <!-- 4 -->
+      <div class="news-card">
+        <h4>CNBC Indonesia</h4>
+        <p>KKP menerapkan model “penangkapan ikan terukur” untuk mencegah over-fishing, melalui modernisasi kapal dan penguatan regulasi perikanan berkelanjutan.</p>
+        <a href="https://www.cnbcindonesia.com/news/20251024095251-8-678853/video-cegah-overfishing-kkp-terapkan-penangkapan-ikan-terukur" target="_blank">Baca Selengkapnya →</a>
+      </div>
+
+      <!-- 5 -->
+      <div class="news-card">
+        <h4>Kemenko Polkam</h4>
+        <p>Kemenko Polkam menegaskan pentingnya sinergi nasional lintas lembaga dalam penanganan batas maritim Indonesia untuk memperkuat kedaulatan laut.</p>
+        <a href="https://polkam.go.id/kemenko-polkam-tegaskan-pentingnya-sinergi-nasional-dalam-penanganan-batas-maritim-indonesia/" target="_blank">Baca Selengkapnya →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h3>MarineSustain</h3>
+        <p>Platform terintegrasi untuk monitoring dan analisis keberlanjutan ekosistem maritim Indonesia.</p>
+      </div>
+      <div>
+        <h4>Platform</h4>
+        <ul>
+          <li>Dashboard</li>
+          <li>Hukum Laut</li>
+          <li>Prediksi</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Informasi</h4>
+        <ul>
+          <li>Tentang Kami</li>
+          <li>Kontak</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontak</h4>
+        <ul>
+          <li>info@marinesustain.id</li>
+          <li>+62 21 1234 5678</li>
+          <li>Banten, Indonesia</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 MarineSustain. 
+    </div>
+  </footer>
+
+</body>
+</html>

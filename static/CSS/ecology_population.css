@@ -1,0 +1,405 @@
+/* =====================
+   GLOBAL STYLES
+===================== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  padding-top: 98px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 64px;
+  background-color: white;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.9rem; /* lebih besar dari sebelumnya */
+  font-weight: 800;
+  color: #0d3b66;
+  margin: 0;
+  line-height: 1;
+}
+
+.navbar-logo img {
+  height: 60px; /* logo tetap proporsional */
+  width: auto;
+  object-fit: contain;
+  vertical-align: middle;
+  border-radius: 4px;
+}
+
+/* Menu navigasi */
+.navbar nav {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* pindahkan menu ke tengah */
+  gap: 40px; /* jarak antar menu */
+}
+
+.navbar a {
+  color: #334155;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem; /* sedikit lebih besar dari sebelumnya */
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #059669;
+}
+
+.navbar a.active {
+  border-bottom: 2px solid #059669;
+  color: #059669;
+}
+
+/* HERO SECTION */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #0369a1, #075985);
+  color: #ffffff;
+  padding: 80px 60px;
+  border-radius: 12px;
+  gap: 40px;
+}
+
+/* Bagian teks kiri */
+.hero-text {
+  flex: 1;
+  max-width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: #cfe4f9;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Gambar kanan */
+.hero img {
+  flex: 1;
+  max-width: 35%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+}
+
+/* ========================= */
+/* FORM PREDIKSI OVERFISHING */
+/* ========================= */
+
+.prediction-section {
+  background: #f1f5f9;
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prediction-card {
+  background: white;
+  width: 95%;
+  max-width: 1400px;
+  padding: 60px 100px;
+  border-radius: 24px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.prediction-card h2 {
+  color: #0369a1;
+  text-align: center;
+  margin-bottom: 36px;
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+/* Tata letak form grid */
+#predictForm {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 60px;
+}
+
+#predictForm label {
+  font-weight: 600;
+  color: #334155;
+  display: block;
+  margin-bottom: 8px;
+}
+
+#predictForm input,
+#predictForm select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #f8fafc;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+#predictForm input:focus,
+#predictForm select:focus {
+  border-color: #0369a1;
+  background-color: #ffffff;
+  outline: none;
+}
+
+/* Tombol di tengah */
+#predictForm button {
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-top: 30px;
+  background-color: #0369a1;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 14px 34px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.15s ease;
+}
+
+#predictForm button:hover {
+  background-color: #075985;
+  transform: translateY(-2px);
+}
+
+/* Hasil prediksi */
+.result-box {
+  text-align: center;
+  margin-top: 36px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.result-box span.overfishing {
+  color: #dc2626;
+}
+
+.result-box span.underfishing {
+  color: #16a34a;
+}
+
+.result-box span.moderate {
+  color: #f59e0b;
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 768px) {
+  .prediction-card {
+    width: 95%;
+    padding: 40px 30px;
+  }
+
+  #predictForm {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  #predictForm button {
+    width: 100%;
+  }
+}
+
+
+
+/* =====================
+   SECTION — TABEL DESKRIPSI KLASIFIKASI
+===================== */
+.classification-section {
+  background: #f9fafb;
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.classification-card {
+  background: #ffffff;
+  width: 95%;
+  max-width: 1200px;
+  padding: 50px 70px;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.classification-card h2 {
+  color: #0369a1;
+  text-align: center;
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.classification-card .subtitle {
+  text-align: center;
+  color: #475569;
+  margin-bottom: 40px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+/* === TABEL === */
+.classification-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+.classification-table th {
+  background-color: #0369a1;
+  color: #ffffff;
+  padding: 14px 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.classification-table td {
+  padding: 14px 10px;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.classification-table tr:hover {
+  background-color: #f1f5f9;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* === STATUS WARNA === */
+.status {
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 0.95rem;
+}
+
+.status.underfishing {
+  background-color: #22c55e; /* Hijau: aman */
+}
+
+.status.optimal {
+  background-color: #0ea5e9; /* Biru: ideal */
+}
+
+.status.overfishing {
+  background-color: #ef4444; /* Merah: bahaya */
+}
+
+.status.growth {
+  background-color: #facc15; /* Kuning: waspada */
+  color: #000;
+}
+
+.status.recruitment {
+  background-color: #b91c1c; /* Merah tua: kritis */
+}
+
+.status.uncertain {
+  background-color: #9ca3af; /* Abu-abu: tidak pasti */
+}
+
+/* === RESPONSIF === */
+@media (max-width: 768px) {
+  .classification-card {
+    padding: 30px 20px;
+  }
+
+  .classification-card h2 {
+    font-size: 1.4rem;
+  }
+
+  .classification-table th,
+  .classification-table td {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+  background:#075985;
+  color: #fff;
+  padding: 50px 80px 30px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+footer h3, footer h4 {
+  color: #f8fafc;
+  margin-bottom: 12px;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li {
+  margin-bottom: 6px;
+  color: #cbd5e1;
+  font-size: 15px;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #94a3b8;
+  margin-top: 40px;
+  border-top: 1px solid #1e293b;
+  padding-top: 12px;
+}

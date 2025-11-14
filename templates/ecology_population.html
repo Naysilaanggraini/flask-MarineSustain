@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecology & Population - MarineSustain</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ecology_population.css') }}">
+</head>
+<body>
+  <header class="navbar">
+    <h1 class="navbar-logo">
+    <img src="/static/Images/logo2.jpg" alt="Logo" />
+    MarineSustain
+    </h1>
+    <nav>
+      <a href="/">Beranda</a>
+      <a href="/about">Tentang Kami</a>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/marine-law">Hukum Laut</a>
+      <a href="/ecology-population" class="active">Ekologi & Populasi</a>
+    </nav>
+  </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Memahami Ekologi Laut & Dinamika Populasi Ikan</h1>
+            <p>Analisis faktor biologis dan lingkungan terhadap keberlanjutan populasi</p>
+        </div>
+        <img src="/static/Images/populasiikanfix.jpg" alt="Ekosistem Laut">
+    </section>
+
+<!-- ========================= -->
+<!-- FORM PREDIKSI OVERFISHING -->
+<!-- ========================= -->
+<section class="prediction-section">
+  <div class="prediction-card">
+    <h2>Prediksi Kondisi Overfishing</h2>
+    
+    <form id="predictForm">
+      <label>Tahun</label>
+      <input type="number" name="tahun" placeholder="contoh: 2025" required>
+
+      <label>Provinsi</label>
+      <input type="text" name="provinsi" placeholder="contoh: ACEH" required>
+
+      <label>Kelompok Ikan</label>
+      <select name="kelompok_ikan" required>
+        <option value="">-- Pilih Jenis Ikan --</option>
+        <option value="TUNA">TUNA</option>
+        <option value="CAKALANG">CAKALANG</option>
+        <option value="TONGKOL">TONGKOL</option>
+        <option value="TENGGIRI">TENGGIRI</option>
+        <option value="MARLIN">MARLIN</option>
+      </select>
+
+      <label>Effort (kapal)</label>
+      <input type="number" step="any" name="effort" placeholder="contoh: 54047" required>
+
+      <label>CPUE (Ton/Trip)</label>
+      <input type="number" step="any" name="cpue" placeholder="contoh: 0.79" required>
+
+      <label>Hasil Tangkapan / Catch (Ton)</label>
+      <input type="number" step="any" name="catch" placeholder="contoh: 42835.16" required>
+
+      <label>TP_C</label>
+      <input type="number" step="any" name="tp_c" placeholder="contoh: 140680.48" required>
+
+      <label>TP_E</label>
+      <input type="number" step="any" name="tp_e" placeholder="contoh: 369573.96" required>
+
+      <button type="submit">Prediksi Sekarang</button>
+    </form>
+
+    <div id="result" class="result-box"></div>
+  </div>
+</section>
+
+
+
+<!-- ========================= -->
+<!-- TABEL DESKRIPSI KLASIFIKASI -->
+<!-- ========================= -->
+<section class="classification-section">
+  <div class="classification-card">
+    <h2>Keterangan Jenis Kelas Klasifikasi Prediksi</h2>
+    <p class="subtitle">
+      Penjelasan tentang setiap kategori hasil prediksi kondisi stok ikan
+      berdasarkan tingkat pemanfaatan dan keberlanjutannya.
+    </p>
+
+    <div class="table-wrapper">
+      <table class="classification-table">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Klasifikasi</th>
+            <th>Deskripsi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Underfishing</td>
+            <td>Kondisi di mana tingkat pemanfaatan stok ikan masih di bawah kapasitas maksimum lestari (MSY). Upaya penangkapan masih rendah sehingga populasi ikan berpotensi meningkat; pemanfaatan dapat ditingkatkan tanpa mengganggu keberlanjutan stok.</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Optimal</td>
+            <td>Kondisi di mana tingkat pemanfaatan ikan mendekati atau berada pada titik maksimum lestari (MSY). Stok ikan dimanfaatkan secara efisien dan berkelanjutan; hasil tangkapan maksimum tercapai tanpa mengancam keberlanjutan populasi.</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Overfishing</td>
+            <td>Kondisi di mana tingkat penangkapan melebihi batas lestari (MSY), sehingga populasi ikan mengalami tekanan berat. Jika berlanjut, stok ikan akan menurun secara signifikan dan memerlukan waktu lama untuk pulih.</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Growth Overfishing</td>
+            <td>Terjadi ketika ikan ditangkap sebelum mencapai ukuran atau umur optimal untuk tumbuh. Akibatnya, potensi hasil tangkapan (biomassa dan nilai ekonomi) berkurang karena banyak ikan belum sempat tumbuh maksimal.</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Recruitment Overfishing</td>
+            <td>Kondisi paling kritis, di mana jumlah induk ikan (spawning stock biomass) terlalu sedikit untuk menghasilkan rekrutmen (anak ikan) yang cukup. Populasi tidak mampu memperbaharui diri, sehingga stok ikan berisiko kolaps.</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Uncertain</td>
+            <td>Status stok ikan belum dapat dipastikan karena keterbatasan data biologis, statistik penangkapan, atau informasi lingkungan laut. Diperlukan penelitian lebih lanjut untuk menentukan kondisi sebenarnya.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+    <footer>
+    <div class="footer-content">
+      <div>
+        <h3>MarineSustain</h3>
+        <p>Platform terintegrasi untuk monitoring dan analisis keberlanjutan ekosistem maritim Indonesia.</p>
+      </div>
+      <div>
+        <h4>Platform</h4>
+        <ul>
+          <li>Dashboard</li>
+          <li>Hukum Laut</li>
+          <li>Prediksi</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Informasi</h4>
+        <ul>
+          <li>Tentang Kami</li>
+          <li>Kontak</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontak</h4>
+        <ul>
+          <li>info@marinesustain.id</li>
+          <li>+62 21 1234 5678</li>
+          <li>Banten, Indonesia</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 MarineSustain. 
+    </div>
+  </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/JS/ecology_population.js"></script>
+</body>
+</html>

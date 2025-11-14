@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marine Law - Kerangka Hukum Laut</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/marinelaw.css') }}">
+  <script>
+    // Fungsi untuk smooth scroll ke section
+    function scrollToSection(id, button) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+
+      // ubah status active button
+      document.querySelectorAll('.tabs button').forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+    }
+  </script>
+</head>
+
+<body>
+  <header class="navbar">
+    <h1 class="navbar-logo">
+    <img src="/static/Images/logo2.jpg" alt="Logo" />
+    MarineSustain
+    </h1>
+    <nav>
+      <a href="/">Beranda</a>
+      <a href="/about">Tentang Kami</a>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/marine-law" class="active">Hukum Laut</a>
+      <a href="/ecology-population">Ekologi & Populasi</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h2>Kerangka Hukum Laut Indonesia dan Dunia</h2>
+        <p>Memahami regulasi maritim yang mengatur perairan Indonesia dan internasional untuk menjaga keberlanjutan ekosistem laut dan kedaulatan wilayah perairan.</p>
+      </div>
+       <img src="/static/Images/hukumlaut.jpg" alt="hukum laut">
+    </section>
+
+    <section class="tabs">
+      <button class="active" onclick="scrollToSection('unclos-section', this)">Batas Zona Laut Indonesia</button>
+      <button onclick="scrollToSection('national-policy', this)">Kerangka Hukum Internasional</button>
+      <button onclick="scrollToSection('compliance-section', this)">Kebijakan Nasional</button>
+    </section>
+
+     <!--Section 1-->
+<section id="marine-law-section">
+  <h3>Peta Batas Laut Indonesia dan Zona Laut</h3>
+  <div class="map-container">
+    <div class="map-left">
+      <img src="/static/Images/peta batasan.jpg" alt="Peta batas laut Indonesia">
+    </div>
+    <div class="map-right">
+      <img src="/static/Images/bataszona.jpg" alt="Zona laut Indonesia">
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ================= SECTION 2: HUKUM INTERNASIONAL ================= -->
+<section id="national-policy" class="policy-section">
+  <h2>Kerangka Hukum Internasional Pengelolaan Sumber Daya Ikan</h2>
+  <p class="section-desc">
+    Sejumlah perjanjian internasional telah menetapkan prinsip pengelolaan sumber daya ikan yang berkelanjutan, 
+    khususnya untuk mencegah overfishing dan menjaga populasi ikan pelagis besar.
+  </p>
+
+  <div class="law-cards">
+    <div class="law-item">
+      <h3>1. United Nations Convention on the Law of the Sea (UNCLOS) 1982</h3>
+      <p>
+        Menetapkan kewajiban negara pantai untuk menentukan jumlah tangkapan yang diperbolehkan 
+        (<strong>allowable catch</strong>) dan menjaga agar sumber daya ikan di Zona Ekonomi Eksklusif 
+        tidak terancam eksploitasi berlebihan.
+      </p>
+      <blockquote>
+        “The coastal State shall determine the allowable catch of the living resources in its exclusive economic zone…”
+      </blockquote>
+      <p>
+        Pasal 61 UNCLOS menegaskan pentingnya konservasi berbasis bukti ilmiah agar populasi ikan 
+        tetap berada pada tingkat maksimum lestari (<em>Maximum Sustainable Yield / MSY</em>).
+      </p>
+    </div>
+
+    <div class="law-item">
+      <h3>2. Code of Conduct for Responsible Fisheries (CCRF) – FAO 1995</h3>
+      <p>
+        Mengatur prinsip pengelolaan perikanan yang bertanggung jawab, termasuk penerapan 
+        <em>precautionary approach</em> dalam menetapkan batas tangkapan dan pengawasan kegiatan penangkapan ikan.
+      </p>
+      <blockquote>
+        “Recognizing that long-term sustainable use of fisheries resources is the overriding objective of conservation and management…”
+      </blockquote>
+      <p>
+        CCRF mendorong negara untuk menggunakan bukti ilmiah dalam memelihara atau memulihkan stok ikan 
+        hingga mencapai tingkat MSY. Prinsip ini juga menekankan pentingnya keterlibatan nelayan dan pemangku kepentingan dalam setiap keputusan pengelolaan.
+      </p>
+    </div>
+
+    <div class="law-item">
+      <h3>3. The Geneva Convention on Fishing and Conservation of the Living Resources of the High Seas 1958</h3>
+      <p>
+        Konvensi ini menjadi dasar kerja sama antarnegara dalam konservasi sumber daya hayati laut lepas. 
+        Negara memiliki hak untuk menangkap ikan, namun juga kewajiban untuk mengadopsi langkah-langkah 
+        konservasi bersama demi mencegah overfishing dan menjaga keseimbangan ekosistem laut global.
+      </p>
+      <blockquote>
+        “All States have the duty to adopt, or to cooperate with other States in adopting, 
+        such measures for the conservation of the living resources of the high seas.”
+      </blockquote>
+      <p>
+        Dengan demikian, konvensi ini memperkuat semangat tanggung jawab bersama (*common but differentiated responsibilities*) 
+        dalam menjaga keberlanjutan sumber daya laut dunia.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 3: HUKUM NASIONAL ================= -->
+<section id="compliance-section" class="compliance-section">
+  <h2>Kebijakan Nasional dan Data Pemanfaatan Ikan Pelagis Besar di Indonesia</h2>
+  <p class="section-desc">
+    Pemerintah Indonesia telah menerapkan berbagai regulasi untuk memastikan pengelolaan sumber daya 
+    ikan dilakukan secara berkelanjutan melalui pendekatan ilmiah dan penegakan hukum.
+  </p>
+
+  <div class="law-list">
+    <ul>
+      <li><strong>Undang-Undang Nomor 45 Tahun 2009</strong> – Mengatur pengelolaan sumber daya ikan, lingkungan perairan, serta pengawasan dan sanksi terhadap pelanggaran perikanan.</li>
+      <li><strong>Peraturan Pemerintah Nomor 60 Tahun 2007</strong> – Mengatur konservasi sumber daya ikan, termasuk pembatasan penangkapan dan alat tangkap.</li>
+      <li><strong>Peraturan Pemerintah Nomor 11 Tahun 2023</strong> – Mengatur penangkapan ikan terukur berdasarkan kuota, wilayah, dan evaluasi berkala.</li>
+      <li><strong>Keputusan Menteri KKP Nomor 19 Tahun 2022</strong> – Menetapkan estimasi potensi, jumlah tangkapan yang diperbolehkan (JTB), dan tingkat pemanfaatan sumber daya ikan di setiap WPPNRI.</li>
+    </ul>
+  </div>
+
+  <div class="table-wrapper">
+    <h3>Data Pemanfaatan Ikan Pelagis Besar Berdasarkan WPPNRI</h3>
+    <table class="fish-table">
+      <thead>
+        <tr>
+          <th>Wilayah Pengelolaan (WPPNRI)</th>
+          <th>Perairan</th>
+          <th>Estimasi Potensi (ton)</th>
+          <th>JTB (ton)</th>
+          <th>Tingkat Pemanfaatan</th>
+          <th>Provinsi Terkait</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>571</td><td>Selat Malaka & Laut Andaman</td><td>75.095</td><td>37.548</td><td>1,4</td><td>Aceh, Sumatera Utara, Riau</td></tr>
+        <tr><td>572</td><td>Samudera Hindia (Barat Sumatera)</td><td>438.877</td><td>219.439</td><td>1,1</td><td>Sumatera Barat, Bengkulu, Lampung</td></tr>
+        <tr><td>573</td><td>Selatan Jawa - Nusa Tenggara</td><td>354.215</td><td>247.950</td><td>0,9</td><td>Banten, Jawa Barat, Bali, NTB, NTT</td></tr>
+        <tr><td>711</td><td>Selat Karimata & Laut Natuna</td><td>163.744</td><td>114.621</td><td>0,7</td><td>Kep. Riau, Kalimantan Barat</td></tr>
+        <tr><td>712</td><td>Laut Jawa</td><td>145.863</td><td>72.932</td><td>1,3</td><td>DKI Jakarta, Jawa Tengah, Kalsel</td></tr>
+        <tr><td>713</td><td>Selat Makasar & Laut Flores</td><td>162.506</td><td>113.754</td><td>0,8</td><td>Sulawesi Selatan, NTB, Maluku</td></tr>
+        <tr><td>714</td><td>Teluk Tolo & Laut Banda</td><td>370.653</td><td>259.457</td><td>0,7</td><td>Maluku, Sulawesi Tenggara</td></tr>
+        <tr><td>717</td><td>Teluk Cendrawasih & Samudera Pasifik</td><td>189.718</td><td>132.803</td><td>0,9</td><td>Papua, Papua Barat Daya</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+    <section class="quote">
+      <blockquote>
+        “The sea is our shared future – protecting it through law ensures prosperity for all nations.”
+      </blockquote>
+      <p><em>UNCLOS 1982 – United Nations Convention on the Law of the Sea</em></p>
+    </section>
+  </main>
+
+    <!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+      <div>
+        <h3>MarineSustain</h3>
+        <p>Platform terintegrasi untuk monitoring dan analisis keberlanjutan ekosistem maritim Indonesia.</p>
+      </div>
+      <div>
+        <h4>Platform</h4>
+        <ul>
+          <li>Dashboard</li>
+          <li>Hukum Laut</li>
+          <li>Prediksi</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Informasi</h4>
+        <ul>
+          <li>Tentang Kami</li>
+          <li>Kontak</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontak</h4>
+        <ul>
+          <li>info@marinesustain.id</li>
+          <li>+62 21 1234 5678</li>
+          <li>Banten, Indonesia</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2025 MarineSustain. 
+    </div>
+  </footer>
+</body>
+</html>

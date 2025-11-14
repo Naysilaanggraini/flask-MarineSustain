@@ -1,0 +1,363 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #1e293b;
+  background: #f8fafc;
+  padding-top: 98px;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 64px;
+  background-color: white;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.9rem; /* lebih besar dari sebelumnya */
+  font-weight: 800;
+  color: #0d3b66;
+  margin: 0;
+  line-height: 1;
+}
+
+.navbar-logo img {
+  height: 60px; /* logo tetap proporsional */
+  width: auto;
+  object-fit: contain;
+  vertical-align: middle;
+  border-radius: 4px;
+}
+
+/* Menu navigasi */
+.navbar nav {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* pindahkan menu ke tengah */
+  gap: 40px; /* jarak antar menu */
+}
+
+.navbar a {
+  color: #334155;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem; /* sedikit lebih besar dari sebelumnya */
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #059669;
+}
+
+.navbar a.active {
+  border-bottom: 2px solid #059669;
+  color: #059669;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 20px 20px 80px;
+  background: #ffffff;
+}
+
+/* Subjudul "Tentang Proyek" */
+.hero h2 {
+  font-size: 3rem;
+  color: #0c4a6e;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+
+/* Judul utama "Marine Intelligence" */
+.hero h1 {
+  font-size: 3rem; /* lebih besar agar dominan di layar lebar */
+  font-weight: 750;
+  color: #0f172a;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.hero h1 span {
+  color: #10b981; /* hijau yang konsisten dengan tema */
+}
+
+/* Deskripsi singkat */
+.hero p {
+  color: #475569;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero h2 {
+    font-size: 1.4rem;
+  }
+}
+
+
+/* ABOUT SECTION */
+.about-section {
+  background: linear-gradient(135deg, #0369a1, #075985);
+  color: white;
+  padding: 60px 80px; /* dikurangi sedikit biar teks naik */
+}
+
+.about-content {
+  display: flex;
+  align-items: flex-start; /* ini bikin teks sejajar lebih naik dengan gambar */
+  justify-content: space-between;
+  gap: 30px; /* jarak lebih rapat */
+}
+
+.about-content .text {
+  width: 48%; /* dipersempit agar block teks terlihat lebih padat */
+  line-height: 1.6; /* biar paragraf rapi */
+  margin-top: 10px;
+}
+
+.about-content h3 {
+  font-size: 34px;       /* diperbesar */
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #FFFFFF;     
+}
+
+.about-content p {
+  margin-bottom: 12px;
+  text-align: justify;   /* lebih rapi */
+}
+
+.about-content img {
+  width: 500px; 
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+
+/* INTEGRASI */
+.integration {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.integration h2 {
+  color: #0c4a6e;
+  font-weight: 700;
+}
+
+.integration p {
+  max-width: 800px;
+  margin: 12px auto 40px;
+  color: #475569;
+}
+
+.integration-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: nowrap; /* jangan dibungkus ke bawah */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.integration-cards .card {
+  flex: 1;
+  background: #e0fee9;
+  border: 1px solid #d1d5db; /* garis tipis abu-abu muda */
+  border-radius: 1rem;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.integration-cards .card h3 {
+  color: #059669; /* hijau lembut */
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+
+.integration-cards .card:hover {
+  transform: translateY(-6px);
+  border-color: #34d399; /* garis berubah hijau saat hover */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Responsif biar rapi di HP/tablet */
+@media (max-width: 1024px) {
+  .integration-cards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .integration-cards .card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+
+/* TUJUAN */
+.purpose {
+  text-align: center;
+  padding: 70px 80px; /* padding dibuat sedikit lebih kecil supaya box terlihat naik */
+  background: #f1f5f9;
+}
+
+.purpose h2 {
+  font-size: 25px;
+  margin-bottom: 18px; 
+  color: #0c4a6e;
+  font-weight: 700;
+}
+
+.purpose-box {
+  background: #cbd5e1;
+  max-width: 1100px; /* box sedikit lebih lebar */
+  margin: 20px auto 0; /* jarak atas diperkecil agar box naik */
+  padding: 35px 45px; /* box lebih "penuh" */
+  border-radius: 14px;
+  color: #0c4a6e;
+  text-align: justify;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08); /* biar terlihat lebih mewah */
+}
+
+.purpose-box p {
+  margin-bottom: 12px;
+}
+
+/* === Features Section === */
+.features {
+  padding: 4rem 0;
+}
+
+.features h2,
+.features > .container > p {
+  text-align: center;     /* rata tengah isi teks */
+  max-width: 850px;       /* biar tidak terlalu panjang */
+  margin: 0 auto 2rem;    /* auto membuat posisi di tengah */
+  color: #333;
+  line-height: 1.6;
+}
+
+.feature-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* biar responsif */
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.feature-grid .card {
+  width: 300px;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  text-align: justify; /* default justify */
+}
+
+/* Judul card di tengah */
+.feature-grid .card h3 {
+  text-align: center;
+  color: #00b36b;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+/* Isi paragraf justify */
+.feature-grid .card p {
+  text-align: justify;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* List rapi dan sejajar kanan kiri */
+.feature-grid .card ul {
+  padding-left: 1.2rem;
+  text-align: justify;
+  line-height: 1.5;
+  color: #333;
+}
+
+.feature-grid .card li {
+  list-style: "✅ ";
+  margin-bottom: 0.5rem;
+}
+
+/* Efek hover biar lebih hidup */
+.feature-grid .card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s ease;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+
+/* FOOTER */
+footer {
+  background:#075985;
+  color: #fff;
+  padding: 50px 80px 30px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+footer h3, footer h4 {
+  color: #f8fafc;
+  margin-bottom: 12px;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li {
+  margin-bottom: 6px;
+  color: #cbd5e1;
+  font-size: 15px;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #94a3b8;
+  margin-top: 40px;
+  border-top: 1px solid #1e293b;
+  padding-top: 12px;
+}

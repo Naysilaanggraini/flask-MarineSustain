@@ -9,7 +9,7 @@ from folium.features import GeoJson, GeoJsonTooltip, GeoJsonPopup
 import numpy as np
 import traceback
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static", template_folder="templates")
 
 # ---------- Helper: safe load resources ----------
 def safe_load_model(path):
@@ -337,3 +337,4 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     # debug mode off by default in production (Gunicorn will run the app)
     app.run(host="0.0.0.0", port=port)
+

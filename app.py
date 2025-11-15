@@ -6,6 +6,7 @@ import folium
 from folium.features import GeoJson, GeoJsonTooltip, GeoJsonPopup
 import json
 import numpy as np
+import os
 
 app = Flask(__name__)
 
@@ -298,4 +299,5 @@ def predict_overfishing():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
 
